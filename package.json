@@ -25,13 +25,16 @@
     "babel-preset-stage-3": "^6.23.0",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
+    "@typechain/hardhat": "^2.3.1",
+    "@typechain/ethers-v5": "^7.2.0",
     "ethereum-waffle": "^3.3.0",
     "ethereumjs-util": "^5.1.2",
     "ethers": "^5.1.4",
     "hardhat": "^2.0.10",
     "hardhat-gas-reporter": "^1.0.4",
     "keccak256": "^1.0.2",
-    "merkletreejs": "^0.2.13"
+    "merkletreejs": "^0.2.13",
+    "ts-node": "^10.7.0"
   },
   "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.0",

@@ -3,22 +3,25 @@ const keccak256 = require("keccak256");
 const csv = require("csv-parser");
 const fs = require("fs");
 var utils = require("ethers").utils;
-const Web3 = require("web3");
+const path = require("path");
 
 function main() {
   // create web3 instance (no provider needed)
-  var web3 = new Web3();
+
   let root;
 
   ///files for each ardrop
   // import distribution from this file
-  const filename = "gen_files/dropTicket/kinship_drop_tickets.csv";
+  const filename = path.join(__dirname, "gen_files/dropTicket/users.csv");
 
-  // what file should we write the merkel proofs too?
-  const output_file = "gen_files/dropTicket/drop_ticket_roots.json";
+  // what file should we write the merkle proofs too?
+  const output_file = path.join(__dirname, "gen_files/dropTicket/users.json");
 
   //file that has the user claim list
-  const userclaimFile = "gen_files/dropTicket/drop_ticket_claimlist.json";
+  const userclaimFile = path.join(
+    __dirname,
+    "gen_files/dropTicket/users2.json"
+  );
 
   //contract of items being sent out
   const airdropContract = "0x027Ffd3c119567e85998f4E6B9c3d83D5702660c";
