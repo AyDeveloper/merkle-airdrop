@@ -1,18 +1,10 @@
 # merkle-airdrop
 
-Generates a list of abjects mapped to each address and root hash. Object contains the leaves and merkle proofs needed to verify that a given data exists for that address in the tree
+Generates a list of objects mapped to each address and root hash. Object contains the leaves and merkle proofs needed to verify that a given data exists for that address in the tree
 
 ## Overview
 
-Contract acts as the disseminator of ERC1155 tokens and only sends out tokens on data verification i.e merkle proof and appropriate arguments used to build the merkle tree for that user.
-
-## Airdrop Types
-
-There are two Airdrop types.
-
-Address Airdrops transfer the airdropped token into the claiming user's wallet address.
-
-Token Airdrops utilize the ERC998 Composable NFTs standard to transfer the token directly into the receiving ERC721 token, assuming that it implements the ERC998 methods for receiving ERC1155s.
+Contract acts as the disseminator of ERC20 tokens and only sends out tokens on data verification i.e merkle proof and appropriate arguments used to build the merkle tree for that user. Address Airdrops transfer the airdropped token into the claiming user's wallet address.
 
 ## Description
 
