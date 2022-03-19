@@ -3,40 +3,30 @@ import { ethers } from "hardhat";
 import { Signer } from "ethers";
 
 async function main() {
-//   const boredApeOwner = "0xcee749f1cfc66cd3fb57cefde8a9c5999fbe7b8f";
-//   const owner = "0x9ae1e982Fc9A9D799e611843CB9154410f11Fe35";
+  //   We get the contract to deploy
+  // const signer = await ethers.getSigners();
+  // const signer2 = await ethers.getSigner(signer[0].address);
+// const ownerAddr = "0x9ae1e982Fc9A9D799e611843CB9154410f11Fe35";
+// const signer1 = await ethers.getSigner(ownerAddr);
+//   const Dynamo = await ethers.getContractFactory("Dynamo");
+//   const dynamo = await Dynamo.connect(signer1).deploy("Dynamos", "DYM", "1000000000000000000000000000000000000000");
+  
+//   await dynamo.deployed();
 
-//   const boredApeOwnerSigner: Signer = await ethers.getSigner(boredApeOwner);
-//   const ownerSigner: Signer = await ethers.getSigner(owner);
+//   console.log(`deployed token address`, dynamo.address);
 
-//    // @ts-ignore
-//    await hre.network.provider.request({
-//     method: "hardhat_impersonateAccount",
-//     params: [owner],
-//   });
+  const claimer = "0x2792f4C16F124942886DF20f3C5B4c2cB195aEe2";
 
-//     // @ts-ignore
-//     await hre.network.provider.request({
-//       method: "hardhat_impersonateAccount",
-//       params: [boredApeOwner],
-//     });
+  const instance = await ethers.getContractAt("IERC20","0x0C669838b390DF27CEEdc9Af53da6371590e4Fc4")
 
-//   // @ts-ignore
-//   await network.provider.send("hardhat_setBalance", [
-//     owner,
-//     "0x2000000000000000000000000000000000000",
-//   ])
+  const bal = await instance.balanceOf("0x7f8BA6f0875272932773e362A6028c38aB649443");
 
-//   We get the contract to deploy
-  const Dynamo = await ethers.getContractFactory("Dynamo");
-  const dynamo = await Dynamo.deploy("Dynamos", "DYM", "1000000000000000000000000000000000000000");
-
-  await dynamo.deployed();
-  console.log('address', dynamo.address);
-
-// 0x2B3151a7fBD37f93Ac3F4EDd2ea4154C28B6C03C
-
-
+  // const transferTo = await instance.transfer("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512", "500000000000000000000000000000000000000");
+  const allowed = await instance.balanceOf(claimer);
+  console.log(`contract balance is ${bal}`);
+  
+  console.log(`claimer balance is ${allowed}`);
+  
 }
 
 // We recommend this pattern to be able to use async/await everywhere

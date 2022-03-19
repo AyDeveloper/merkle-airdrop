@@ -29,10 +29,6 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Dynamo__factory>;
     getContractFactory(
-      name: "ClaimToken",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ClaimToken__factory>;
-    getContractFactory(
       name: "MerkleAirdrop",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MerkleAirdrop__factory>;
@@ -57,11 +53,6 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.Dynamo>;
-    getContractAt(
-      name: "ClaimToken",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ClaimToken>;
     getContractAt(
       name: "MerkleAirdrop",
       address: string,

@@ -26,10 +26,12 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 const config: HardhatUserConfig = {
   solidity: "0.8.4",
   networks: {
-    rinkeby: {
-      url: process.env.RINKEBY_URL || "",
+    kovan: {
+      url: process.env.KOVAN_URL || "",
       accounts:
-        process.env.SECRET !== undefined ? [process.env.SECRET] : [],
+        process.env.SECRETB !== undefined ? [process.env.SECRETB] : [],
+        gas: 2100000,
+        gasPrice:8000000000
     },
   },
   gasReporter: {
